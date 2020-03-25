@@ -23,14 +23,11 @@ current_date = date.find('date')
 date_time = (date[current_date+5:])
 # Convert data to string object
 sPatients = patients[0].getText(strip=True)
-print(patients)
+
 # Test string object for digits
 covid_numbers = ''.join(filter(lambda i: i.isdigit(), sPatients))
 # write relevant data to CSV file
 with open('covidNL.csv', 'a', newline='') as csvfile:
     datafile = csv.writer(csvfile, lineterminator='\n')
+    # datafile.writeheaders(['Date','Patients'])
     datafile.writerow([covid_numbers])
-# datafile.writerow(['Date','Patients'])
-# datafile.writerow([date_time])
-
-print(covid_numbers)
