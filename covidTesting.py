@@ -30,4 +30,4 @@ covid_numbers = ''.join(filter(lambda i: i.isdigit(), sPatients))
 with open('covidNL.csv', 'a', newline='') as csvfile:
     datafile = csv.writer(csvfile, lineterminator='\n')
     # datafile.writeheaders(['Date','Patients'])
-    datafile.writerow([covid_numbers])
+    datafile.writerow([covid_numbers, date_time])
